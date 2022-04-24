@@ -78,9 +78,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
        })
 
 
-       app.get("/data", (req, res)=> {
-           res.send(data)
-       })
+       
 
 
 
@@ -90,7 +88,9 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 run().catch(console.dir)
 
 
-
+app.get("/data", (req, res)=> {
+    res.send(data)
+})
 /* listen */
 app.listen(port, ()=>{
  console.log(`SERVER RUNNING ON ${port}`);
