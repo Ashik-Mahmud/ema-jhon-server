@@ -21,6 +21,21 @@ app.get("/", (req, res) => {
 })
 
 
+const data = [
+    {
+        name: 'ashik',
+        role: 'jr developer'
+    },
+    {
+        name: 'Mahmud',
+        role: 'jr developer'
+    },
+    {
+        name: 'Abir',
+        role: 'jr developer'
+    }
+]
+
 async function run(){
     
 const uri = `mongodb+srv://${process.env.USER_DB}:${process.env.USER_PASS}@cluster0.fykr4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
@@ -62,6 +77,10 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
            res.send(cartProduct)
        })
 
+
+       app.get("/data", (req, res)=> {
+           res.send(data)
+       })
 
 
 
