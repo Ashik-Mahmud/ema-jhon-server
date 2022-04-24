@@ -48,7 +48,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
        /*  GET ALL THE DATA FROM MONGODB */
        app.get("/products", async(req, res) =>{
            const page = parseInt(req.query.page);
-           const size = parseInt(req.query.size) || 12;
+           const size = parseInt(req.query.size);
            const query = {};
            const result = await productsCollection.find(query);
            let productData;
